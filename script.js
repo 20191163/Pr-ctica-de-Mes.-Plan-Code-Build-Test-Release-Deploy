@@ -12,6 +12,9 @@ function clearDisplay() {
 
 function calculate() {
     try {
+        if (displayValue.includes('/0')) {
+            throw new Error('División por cero');
+        }
         const result = eval(displayValue);
         displayValue = result;
         document.getElementById('display').value = result;
