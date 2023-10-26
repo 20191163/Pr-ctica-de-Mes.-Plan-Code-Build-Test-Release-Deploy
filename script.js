@@ -1,6 +1,9 @@
 let displayValue = '';
 
 function appendToDisplay(value) {
+    if (displayValue === 'Error') {
+        displayValue = ''; // Reiniciar si se mostró un error previamente
+    }
     displayValue += value;
     document.getElementById('display').value = displayValue;
 }
